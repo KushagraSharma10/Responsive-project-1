@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #0E0E0E;
+}
+
+@font-face {
+  font-family: "Chillax";
+  src: url("./images/Chillax.woff");
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+section img {
+  width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section h1 {
+  color: rgb(218, 197, 167);
+  font-family: "Satoshi";
+  font-size: 3.6rem;
+  font-weight: 100;
+  text-align: center;
+}
+section h1 i {
+  font-family: "Gembetta light";
+}
+section p {
+  color: rgb(218, 197, 167);
+  font-family: "Chillax";
+  text-align: center;
+  font-weight: 100;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0.9rem 0;
+  opacity: 0.8;
+}
+
+@media (min-width: 1024px) {
+  section img {
+    width: 38%;
+  }
+  section h1 {
+    font-size: 8rem;
+    line-height: 1;
+  }
+  section h1 i {
+    font-weight: 100;
+  }
+  section p {
+    width: 46%;
+    font-size: 1.4rem;
+    font-weight: 100;
+    line-height: 1.8;
+  }
+}/*# sourceMappingURL=style.css.map */
