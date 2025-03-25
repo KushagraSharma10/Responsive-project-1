@@ -4,63 +4,214 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
-  background-color: #0E0E0E;
+  background-color: #0e0e0e;
 }
 
-@font-face {
-  font-family: "Chillax";
-  src: url("./images/Chillax.woff");
-}
-section {
+.view-1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2rem 3rem;
 }
-section img {
-  width: 80%;
+.view-1 img {
+  width: 75%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-section h1 {
+.view-1 h1 {
   color: rgb(218, 197, 167);
   font-family: "Satoshi";
   font-size: 3.6rem;
   font-weight: 100;
   text-align: center;
 }
-section h1 i {
+.view-1 h1 i {
   font-family: "Gembetta light";
 }
-section p {
-  color: rgb(218, 197, 167);
+.view-1 p {
+  color: #dac5a7;
   font-family: "Chillax";
   text-align: center;
-  font-weight: 100;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1rem;
   line-height: 1.6;
   margin: 0.9rem 0;
-  opacity: 0.8;
+  opacity: 1;
 }
 
+.view-2 {
+  width: 100%;
+  padding: 4rem 3rem;
+  display: flex;
+  justify-content: center;
+}
+.view-2 .marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.view-2 .marquee::after {
+  content: "";
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0e0e0e, transparent);
+}
+.view-2 .marquee::before {
+  content: "";
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to left, #0e0e0e, transparent);
+  z-index: 2;
+}
+.view-2 .marquee .logos {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 1.5rem;
+  animation: marquee 10s linear infinite both;
+}
+.view-2 .marquee .logos img {
+  width: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.view-3 {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.view-3 .services {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.view-3 .services .box {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background-color: #181716;
+  border: 1px solid #34312c;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.view-3 .services .box .text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.view-3 .services .box .text span {
+  color: rgba(218, 197, 167, 0.6);
+}
+.view-3 .services .box .text h1 {
+  color: rgba(218, 197, 167, 0.7843137255);
+  font-family: "satoshi";
+  font-size: 1.6rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.view-3 .services .box .text p {
+  color: rgba(218, 197, 167, 0.7843137255);
+  font-family: "chillax";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+.view-3 .services .box .link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.view-3 .services .box .link .arrow {
+  width: 1rem;
+  height: 1rem;
+  padding: 1rem;
+  border: 1px solid #34312c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: rgba(218, 197, 167, 0.7843137255);
+  background-color: #282522;
+  transition: color 0.3s ease;
+}
+.view-3 .services .box .link .arrow i {
+  font-size: 1.3rem;
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+.view-3 .services .box .link p {
+  font-family: "satoshi regular";
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(218, 197, 167, 0.7843137255);
+  text-transform: uppercase;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 @media (min-width: 1024px) {
-  section img {
+  .view-1 img {
     width: 38%;
   }
-  section h1 {
+  .view-1 h1 {
     font-size: 8rem;
     line-height: 1;
   }
-  section h1 i {
+  .view-1 h1 i {
     font-weight: 100;
   }
-  section p {
+  .view-1 p {
     width: 46%;
     font-size: 1.4rem;
     font-weight: 100;
     line-height: 1.8;
+  }
+  .view-2 .marquee {
+    width: 80%;
+    gap: 1rem;
+  }
+  .view-2 .marquee .logos {
+    gap: 9rem;
+  }
+  .view-3 {
+    padding: 4rem;
+  }
+  .view-3 .services {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .view-3 .services .box {
+    width: 30%;
+  }
+  .view-3 .services .box .link:hover {
+    cursor: pointer;
+  }
+  .view-3 .services .box .link:hover i {
+    rotate: 45deg;
+  }
+  .view-3 .services .box .link p {
+    font-size: 0.9rem;
+    font-weight: 400;
   }
 }/*# sourceMappingURL=style.css.map */
